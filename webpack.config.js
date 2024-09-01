@@ -2,9 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // Ensure you are in development mode for better debugging
+  mode: 'development',
   entry: './src/main.ts',
-  devtool: 'inline-source-map', // This enables source map generation
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -14,12 +14,20 @@ module.exports = {
           options: {
             transpileOnly: true,
             compilerOptions: {
-              "sourceMap": true,  // Ensure source maps are enabled
-              "inlineSources": true  // Include the original source in the source map
+              "sourceMap": true,
+              "inlineSources": true
             }
           }
         },
         exclude: /node_modules/,
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader', // Allows importing HTML files
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'], // Allows importing CSS files
       },
     ],
   },
@@ -29,21 +37,19 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/' // Ensures proper handling of routes
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html', // Reference index.html in the root directory
-      filename: 'index.html',   // Output file in the dist directory
+      template: './index.html',
+      filename: 'index.html',
     }),
   ],
   devServer: {
     static: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
-    open: {
-      app: {
-        name: 'chrome', // Specify the browser to open
-      },
-    },
+    open: true,
+    historyApiFallback: true, // This is important for handling client-side routing
   },
 };

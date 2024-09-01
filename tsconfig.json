@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "target": "es6",  // Ensure the target is set to es6
-    "module": "es6",
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",  // Ensure module resolution is set to node
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "sourceMap": true,  // Enable source maps
-    "inlineSources": true  // Include original source code in the source map
+    "sourceMap": true,
+    "inlineSources": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],  // Include the declaration files
   "exclude": ["node_modules"]
 }
