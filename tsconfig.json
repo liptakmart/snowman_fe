@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "es6",  // Ensure the target is set to es6
+    "module": "es6",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "sourceMap": true,  // Enable source maps
+    "inlineSources": true  // Include original source code in the source map
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:9000",
+      "webRoot": "${workspaceFolder}/dist",
+      "sourceMaps": true,
+      "trace": true,
+      "skipFiles": ["node_modules/**"],
+      "sourceMapPathOverrides": {
+        "webpack://snowman_fe/./src/*": "${workspaceFolder}/src/*", // Maps the Webpack source path to your src folder
+        "webpack:///./*": "${workspaceFolder}/*",  // General mapping for files at the root level
+        "webpack:///*": "${workspaceFolder}/*"    // General mapping fallback
+      }
+    }
+  ]
+}
