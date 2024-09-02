@@ -17,8 +17,11 @@ function setupRouting() {
 }
 
 // Function to handle navigation
-function navigateTo(event: Event, path: string) {
-    event.preventDefault();
+export function navigateTo(event: Event | null, path: string) {
+    if (event !== null){
+        event.preventDefault();
+    }
+    
     history.pushState({}, '', path);
     navigate(path);
 }

@@ -1,0 +1,114 @@
+/* Make sure the container fills the entire space of its parent */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Fill the whole height of the parent */
+    width: 100%; /* Fill the whole width of the parent */
+}
+
+/* Styling for the buttons */
+.game-button {
+    font-size: 2em; /* Big buttons */
+    padding: 20px 40px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Different background colors for each button */
+.create-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.join-button {
+    background-color: #008CBA; /* Blue */
+    color: white;
+}
+
+/* Change background color on hover */
+.create-button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+.join-button:hover {
+    background-color: #007bb5; /* Darker blue */
+}
+
+/* Overlay - Initially hidden */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: auto; /* Make the overlay unclickable */
+}
+
+/* Popup */
+.popup {
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    pointer-events: auto; /* Make the popup clickable */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Popup Header */
+.popup-header {
+    margin-bottom: 20px;
+}
+
+.popup-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Popup Body */
+.popup-body {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.popup-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Popup Footer */
+.popup-footer {
+    width: 100%;
+    text-align: center;
+}
+
+.new-game-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-game-button:hover {
+    background-color: #45a049;
+}
